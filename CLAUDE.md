@@ -48,3 +48,4 @@ Exceptions à contrainte fixe :
 ## Conventions transverses
 
 - Markdown strict : pas de filet `---` hors frontmatter, pas de tiret cadratin.
+- Le CLI de génération du pdf de présentation (`scripts/dev.sh`) impose une stack technologique exclusive, actée dans `ADR-001-cli-generation-pdf-presentation.md` — jamais Python, jamais pandoc, y compris pour un outillage ponctuel non commité (diagnostic, script d'analyse jetable) touchant ce périmètre. Voir `skl-007-script-pdf-presentation`.

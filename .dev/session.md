@@ -105,7 +105,7 @@ audience: acteurs du milieu open source qu Québec
 TODO: rédiger le plan
 
 
-## x.  Planifier la préparation du pdf support à la présentation
+## 5.  Planifier la préparation du pdf support à la présentation
 
 La présentation est un atelier pratique de 5 minutes sur le mécanisme de l'objection-sociocratique.
 
@@ -140,3 +140,89 @@ TODO:
 
 Rédiger le plan et si aucune objection majeure => exécuter
 
+## 6. Correctifs placement des images sur la page présentation
+
+
+Voici les 4 correctifs:
+
+- Le logo sur le codeQR doit être plus gros. Il est actuellement illisible.
+- Utiliser le même code QR sur la page de présentation et la page finale.
+- La photo et le code QR de la page de présentation doivent être de la même taille que le code qr de la dernière slide. Ils doivent être positionné au centre, juste  en dessous du nom + titre professionnel de l'auteur
+- le titre du présentateur est le suivant => "Stratégie & Leadership des pratiques de sécurité | DevSecOps"
+
+Recommandations:
+  - Utiliser un outil cli pour générer le code QR.
+  - créer une variante de template pour ce nouveau type de page de présentation
+Contrainte: Ajouter une commande "qrcode" dans le cli et générer le code QR dans le répertoire dist.
+
+
+TODO: 
+
+Rédiger le plan et si aucune objection majeure => exécuter
+
+
+## 7. minor fix
+
+Dans la slide 1: respecter la "marge de sécurité" (bordures minimales requise pour toutes les slides)
+
+Ajuster le code
+
+Corriger la slide 1
+
+## 8. Fix comportement des agents
+
+Dans le script bash, il ne doit pas y avoir de code en python. 
+
+Pourquoi l'agent tente-t-il de générer du code python?
+
+Vérifier les harness files (incluant les skills) et l'ADR.
+
+Inclure la règle "utiliser uniquement les outils (stack techno) décrit dans ADR-001"
+
+Diagnostiquer pourquoi cela n'a pas été respecté.
+
+Apporter les changements au fichiers approprié
+
+Continuer l'exécution de la tâche 7
+
+
+## 9. doubler les valeurs de la marge de sécurité
+
+Générer la doc utilisateur du cli et du système de respésentation à l'intention des utilisateurs. Mettre ça dans @doc/cli/**.md
+
+La marge de sécurité ne semble pas marcher sur la slide 1
+
+Diagnostiquer. Dire ce qui se passe
+
+recommendation pour disgnostiquer: faire varier les paramèetres de marge et regarder l'effet sur le PDF.
+
+TODO: fix this shit ASAP please.
+
+## 10. fix marge bas de la page de présentation
+
+la page de présentation a une marge inférique qui semble trop petite.
+
+Diminuer la taille des informations en bas des images
+
+Assurer une valeur minimale par défaut suffisante pour la marge du bas.
+
+Utiliser la même méthode que la tâche 9 pour diagnostiquer.
+
+## x. Finaliser la recherche
+
+Thèse de la recherche:  "L'adoption de l'objection-sociocratique comme unique règle constitut un framework cohérent et complet pour le fonctionnement de communautés de pratiques intentionnés"
+
+Argumentaire Principal:
+
+- Toute les communautés sont des communautés de pratiques ET d'intention
+- Richard Stallman a créé une communauté d'intention clairement assumé: Liberté de faire comme principe fondateur
+- 
+
+
+
+TODO:
+
+- Consulter la recherche préliminaire dans 
+
+
+## 

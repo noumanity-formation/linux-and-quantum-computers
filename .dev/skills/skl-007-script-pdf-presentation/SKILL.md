@@ -13,11 +13,11 @@ description: >-
 
 ## Quand l'utiliser
 
-Quand une tâche demande de modifier `scripts/dev.sh` ou un composant de son moteur de rendu (scripts Lua, templates `.tex`/`.yaml`) dans ce dépôt : ajout de commande, correctif de robustesse, évolution mineure. Ne pas utiliser pour changer de stack de rendu (LuaLaTeX/Beamer → autre chose) sans passer d'abord par `skl-006-adr` pour amender ou remplacer `ADR-001`. Ne pas utiliser non plus pour une refonte d'architecture ou d'interface CLI de grande ampleur : ce type d'intervention se propose via un plan dédié (voir `PLN-004`), pas directement dans ce skill.
+Quand une tâche demande de modifier `scripts/dev.sh` ou un composant de son moteur de rendu (scripts Lua, templates `.tex`/`.yaml`) dans ce dépôt : ajout de commande, correctif de robustesse, évolution mineure. S'applique aussi à tout outillage ponctuel touchant ce périmètre (diagnostic, script d'analyse jetable, inspection du pdf généré) — pas seulement aux modifications commitées. Ne pas utiliser pour changer de stack de rendu (LuaLaTeX/Beamer → autre chose) sans passer d'abord par `skl-006-adr` pour amender ou remplacer `ADR-001`. Ne pas utiliser non plus pour une refonte d'architecture ou d'interface CLI de grande ampleur : ce type d'intervention se propose via un plan dédié (voir `PLN-004`), pas directement dans ce skill.
 
 ## Processus
 
-1. Consulter `ADR-001-cli-generation-pdf-presentation.md` avant toute modification : la stack (Beamer/LuaLaTeX/Lua) et l'emplacement in-repo y sont actés — ne pas les remettre en cause sans un nouvel ADR.
+1. Consulter `ADR-001-cli-generation-pdf-presentation.md` avant toute modification ou tout outillage ponctuel : la stack (Beamer/LuaLaTeX/Lua) et l'emplacement in-repo y sont actés — ne pas les remettre en cause sans un nouvel ADR. **Utiliser uniquement les outils décrits dans ADR-001** (`bash`, `texlua`/Lua, `lualatex`/`latexmk`, `qrencode`, `convert`/`identify`, `inkscape`) ou des utilitaires CLI génériques déjà présents sur le système (ex. `pdftoppm` pour inspecter un pdf) — jamais Python, jamais pandoc, même pour un script jetable non commité.
 2. Respecter les conventions déjà en place dans `dev.sh` : mode strict (`set -euo pipefail`), préfixe `[ERREUR] ...` sur stderr + code de sortie non nul en cas d'échec, préfixe `[OK] ...` en cas de succès.
 3. Toute nouvelle commande suit le patron dispatcher existant (`case "${1:-}" in ...)`) et documente son usage dans le bloc de commentaires d'en-tête du script — source unique du `--help` (généré par `grep '^#'`).
 4. Séparer strictement `workdir/` (temporaire, régénérable, ignoré par git) de `dist/` (sortie finale, livrable versionné).
@@ -30,6 +30,7 @@ Quand une tâche demande de modifier `scripts/dev.sh` ou un composant de son mot
 - `set -euo pipefail` préservé ; aucune erreur silencieuse (pas de `|| true` sans commentaire justifiant pourquoi l'échec est acceptable).
 - `workdir/` et `dist/` ne sont jamais mélangés (un fichier temporaire ne finit pas dans `dist/`, un livrable final ne reste pas seulement dans `workdir/`).
 - Aucun changement de stack de rendu sans ADR amendé ou nouvel ADR.
+- Aucun code Python ni pandoc nulle part dans ce périmètre — diagnostic et outillage ponctuel inclus, pas seulement le code commité.
 - Le script reste exécutable par simple `bash scripts/dev.sh` après `. activate` — pas de dépendance implicite non documentée dans `ADR-001` ou dans le commentaire d'en-tête.
 
 ## Structure du livrable

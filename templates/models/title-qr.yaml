@@ -1,0 +1,53 @@
+name: title-qr
+description: "Page de titre avec photo de l'auteur et code QR (image) centrés sous le nom"
+fields:
+  content:
+    required: []
+    optional:
+      - name: title
+        description: "Titre principal affiché en grand"
+        type: string
+      - name: authors
+        description: "Liste d'auteurs. Chaque entrée est soit une chaîne, soit un objet {name, role}"
+        type: "list<string|object>"
+      - name: date
+        description: "Date et heure de la présentation"
+        type: string
+      - name: location
+        description: "Lieu de la présentation"
+        type: string
+      - name: event
+        description: "Nom de l'événement ou de l'organisme hôte"
+        type: string
+      - name: photo
+        description: "Chemin vers la photo de l'auteur, affichée à 1.9cm de hauteur, centrée sous le bloc auteur"
+        type: path
+      - name: qr-image
+        description: "Chemin vers une image de QR code pré-générée (ex. via `dev.sh qrcode`), affichée à 1.9cm de hauteur à côté de la photo"
+        type: path
+      - name: background
+        description: "Chemin vers l'image de fond (SVG, PNG, JPEG, WEBP)"
+        type: path
+  params:
+    optional: []
+notes: >
+  Variante de `title` : remplace les petits logos en bas à droite (1.1cm) par
+  une photo et un QR code de même taille (1.9cm, comme sur `remerciements`),
+  centrés sous le bloc auteur. Le QR est une image pré-générée (`dev.sh
+  qrcode`), pas générée nativement, pour pouvoir réutiliser exactement le
+  même fichier que sur la diapositive de remerciements.
+example: |
+  ---
+  diapo:
+    model: title-qr
+  content:
+    title: "Titre de la présentation"
+    authors:
+      - name: "Prénom Nom"
+        role: "Rôle"
+    date: "jour mois heure"
+    location: "Ville - lieu"
+    event: "Nom de l'événement"
+    photo: "@src/assets/photo-auteur.jpg"
+    qr-image: "@dist/qrcode-repo.png"
+  ---

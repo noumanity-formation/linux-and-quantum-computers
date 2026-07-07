@@ -1,0 +1,33 @@
+% Modele : title-qr - page de titre, photo + QR (image) centres sous le nom
+% Champs optionnels : title_tex, authors_formatted, event_tex, date_tex, location_tex, photo_path, qr_image_path
+\begin{frame}[plain]
+<%- background_block %>
+
+% Marge de securite : 1.4cm sur les 4 bords (memes valeurs que le bloc evenement/date/lieu).
+% \vspace fixe plutot que \vfill : un \vfill peut s'ecraser a 0 si le contenu fixe
+% (titre + auteurs + photo/QR) depasse la hauteur de page disponible - c'est ce qui
+% causait un titre colle au bord superieur (marge haute mesuree a 0cm).
+\vspace{1.4cm}
+\hspace*{1.4cm}\begin{minipage}{\dimexpr\paperwidth-2.8cm\relax}
+  {\NouTitleFont\fontsize{21}{21}\selectfont\color{NoumanityBlack}\raggedright <%- title_tex %>\par}
+  \vspace{1.5em}
+  {\small\color{NoumanityBlack}\raggedright <%- authors_formatted %>\par}
+\end{minipage}
+\vspace{1.2em}
+\begin{center}
+<% if photo_path and photo_path ~= "" then %>\includegraphics[height=1.9cm]{<%- photo_path %>}<% end %><% if photo_path and photo_path ~= "" and qr_image_path and qr_image_path ~= "" then %>\hspace{1.5em}<% end %><% if qr_image_path and qr_image_path ~= "" then %>\includegraphics[height=1.9cm]{<%- qr_image_path %>}<% end %>
+\end{center}
+\vspace{1.4cm}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=south west, inner sep=0pt, xshift=1.4cm, yshift=0.2cm]
+    at (current page.south west) {%
+      \begin{minipage}{0.85\paperwidth}
+        \raggedright
+        {\footnotesize\color{NoumanityBlack!60}
+          <%- event_tex %> \textbullet{} <%- date_tex %>\par
+          \vspace{0.2em}
+          <%- location_tex %>}
+      \end{minipage}};
+\end{tikzpicture}
+\end{frame}

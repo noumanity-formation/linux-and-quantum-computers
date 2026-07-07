@@ -12,6 +12,8 @@
 #   dev.sh diapo init [--params] [--global-params] SEQ MODEL
 #                                       - cree src/slide-SEQ/content.md
 #   dev.sh diapo check SEQ             - verifie le format d'une diapo
+#   dev.sh qrcode URL OUTPUT [--logo PATH] [--ratio N]
+#                                       - genere dist/OUTPUT (QR + logo compose)
 #   dev.sh --help | -h                  - affiche ce message
 #
 # Stack (ADR-001) : texlua + LuaLaTeX + Beamer + metropolis. Ni Python ni pandoc.
@@ -296,6 +298,52 @@ diapo_check() {
 }
 
 # ---------------------------------------------------------------------------
+# Commande qrcode
+# ---------------------------------------------------------------------------
+
+# dev.sh qrcode URL OUTPUT [--logo PATH] [--ratio N]
+qrcode_cmd() {
+    local logo="$ROOT/src/assets/isotipo-noumanity.png"
+    local ratio="0.30"
+    local args=()
+
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            --logo)  logo="$2"; shift 2 ;;
+            --ratio) ratio="$2"; shift 2 ;;
+            *)       args+=("$1"); shift ;;
+        esac
+    done
+
+    local url="${args[0]:-}"
+    local out="${args[1]:-}"
+    if [ -z "$url" ] || [ -z "$out" ]; then
+        echo "[ERREUR] Usage : dev.sh qrcode URL OUTPUT [--logo PATH] [--ratio N]" >&2
+        exit 1
+    fi
+
+    command -v qrencode >/dev/null 2>&1 || { echo "[ERREUR] qrencode requis" >&2; exit 1; }
+    command -v convert  >/dev/null 2>&1 || { echo "[ERREUR] convert (ImageMagick) requis" >&2; exit 1; }
+
+    mkdir -p "$DIST" "$WORKDIR_ASSETS"
+    local base_png="$WORKDIR_ASSETS/qrcode-base.png"
+    # -l H : correction d'erreur elevee, tolere un logo central sans casser le scan.
+    qrencode -o "$base_png" -s 10 -m 2 -l H "$url"
+
+    local target="$DIST/$out"
+    if [ -f "$logo" ]; then
+        local qr_w; qr_w=$(identify -format "%w" "$base_png")
+        local logo_size; logo_size=$(awk -v w="$qr_w" -v r="$ratio" 'BEGIN{printf "%d", w*r}')
+        local logo_small="$WORKDIR_ASSETS/qrcode-logo.png"
+        convert "$logo" -resize "${logo_size}x${logo_size}" "$logo_small"
+        convert "$base_png" "$logo_small" -gravity center -compose over -composite "$target"
+    else
+        cp "$base_png" "$target"
+    fi
+    echo "[OK] $target genere"
+}
+
+# ---------------------------------------------------------------------------
 # Dispatch principal
 # ---------------------------------------------------------------------------
 
@@ -304,6 +352,7 @@ case "${1:-}" in
     clean)  clean ;;
     model)  shift; model_cmd "$@" ;;
     diapo)  shift; diapo_cmd "$@" ;;
+    qrcode) shift; qrcode_cmd "$@" ;;
     --help|-h) usage ;;
     "")     usage ;;
     *)      echo "[ERREUR] Commande inconnue : $1" >&2; usage ;;

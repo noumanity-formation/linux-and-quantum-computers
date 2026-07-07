@@ -15,6 +15,10 @@ Contrainte de délai : la présentation a lieu le jour même de cette décision 
 
 > Porter tel quel, à la racine de ce dépôt, le CLI `dev.sh` et son moteur Lua/LuaLaTeX/Beamer du dépôt source — améliorations mineures à faible impact seulement, pas de changement de stack ni de redesign architectural.
 
+## Contrainte transverse (tout outillage touchant ce périmètre)
+
+**Aucun outil hors de la stack actée ici — Python et pandoc en particulier — ne doit être utilisé pour quelque tâche que ce soit touchant ce CLI ou ses livrables**, y compris un diagnostic ponctuel, un script d'analyse jetable, ou de l'outillage auxiliaire non destiné à être committé. Seuls sont autorisés : `bash`, `texlua`/Lua, `lualatex`/`latexmk`, et les utilitaires CLI explicitement listés dans ce document (`qrencode`, `convert`/`identify` d'ImageMagick, `inkscape`). Pour une inspection ponctuelle qui ne rentre dans aucun de ces outils, privilégier un utilitaire CLI générique déjà présent sur le système (ex. `pdftoppm`/`pdfinfo` pour extraire une image d'un pdf) plutôt qu'un script dans un langage hors stack.
+
 ## Décisions détaillées
 
 ### Rendu et prétraitement

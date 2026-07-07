@@ -1,5 +1,5 @@
 % Modele : remerciements - diapositive de cloture sans titre
-% Champs optionnels : message_tex, focus_tex, qr_url, qr_label_tex, background_block
+% Champs optionnels : message_tex, focus_tex, qr_url, qr_image_path, qr_label_tex, background_block
 \begin{frame}[plain,t]
 <%- background_block %>
 
@@ -11,7 +11,18 @@
     {\NouTitleFont\fontsize{52}{54}\selectfont\color{NoumanityOrange} <%- focus_tex %>}};
 \end{tikzpicture}
 
-<% if qr_url and qr_url ~= "" then %>
+<% if qr_image_path and qr_image_path ~= "" then %>
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=south east, inner sep=0pt, xshift=-1.4cm, yshift=0.4cm]
+    at (current page.south east) {%
+      \begin{minipage}{4cm}
+        \centering
+        \includegraphics[height=1.9cm]{<%- qr_image_path %>}\par
+        \vspace{0.3em}
+        {\tiny\ttfamily\color{NoumanityBlack!70} <%- qr_label_tex %>}
+      \end{minipage}};
+\end{tikzpicture}
+<% elseif qr_url and qr_url ~= "" then %>
 \begin{tikzpicture}[remember picture, overlay]
   \node[anchor=south east, inner sep=0pt, xshift=-1.4cm, yshift=0.4cm]
     at (current page.south east) {%

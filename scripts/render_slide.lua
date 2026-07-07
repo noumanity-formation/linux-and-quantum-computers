@@ -699,6 +699,18 @@ local function build_ctx(meta, body, config, root, workdir_assets)
     ctx["background_block"] = ""
   end
 
+  -- Photo et QR pre-generes (image) : reutilises par title-qr et remerciements
+  ctx["photo_path"] = ""
+  local photo_raw = ctx["photo"]
+  if type(photo_raw) == "string" and photo_raw ~= "" then
+    ctx["photo_path"] = resolve_asset(clean_path_str(photo_raw), root, workdir_assets) or ""
+  end
+  ctx["qr_image_path"] = ""
+  local qr_image_raw = ctx["qr-image"]
+  if type(qr_image_raw) == "string" and qr_image_raw ~= "" then
+    ctx["qr_image_path"] = resolve_asset(clean_path_str(qr_image_raw), root, workdir_assets) or ""
+  end
+
   -- Auteurs
   local authors = ctx["authors"] or {}
   if type(authors) == "string" then authors = { authors } end

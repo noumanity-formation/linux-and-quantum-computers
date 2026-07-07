@@ -16,12 +16,17 @@ fields:
       - name: qr-label
         description: "Texte sous le code QR (défaut : la valeur de qr-url)"
         type: string
+      - name: qr-image
+        description: "Chemin vers une image de QR code pré-générée (ex. via `dev.sh qrcode`) ; prioritaire sur qr-url si présent, pour réutiliser exactement le même QR que sur la slide de titre"
+        type: path
   params:
     optional: []
 notes: >
   Le code QR est affiché en bas à droite, hauteur 1/5 de la hauteur totale (1.9cm).
-  Si qr-label est absent, l'URL est affichée telle quelle sous le code QR.
-  Le champ focus apparaît en NoumanityOrange pour maximiser l'impact visuel.
+  Si qr-image est présent, il est utilisé tel quel (image) au lieu de générer le
+  QR nativement depuis qr-url. Si qr-label est absent, l'URL est affichée telle
+  quelle sous le code QR. Le champ focus apparaît en NoumanityOrange pour
+  maximiser l'impact visuel.
 example: |
   ---
   diapo:
