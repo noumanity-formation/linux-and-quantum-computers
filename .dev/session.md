@@ -1,81 +1,86 @@
-# intention
+---
+start-at: 2026-07-07 15h47
+---
 
- Écrire les harness file nécessires "CLAUDE.md" CONSTITUTION.md,  INTENTION.md, etc pour fixer la méthode de travail.
+# Intention
 
-  Pour toute demande, doit tenir compte de 3 ingrédients:
-  - l'intention,
-  - le contexte, et
-  - la spécification du livrable
+Produire le matériel accompagnant ma présentation à la Rencontre Linux au Québec du 7 juillet 2026:
 
-Afin d'avoir un petit framework léger de travail augmenté par IA
-
-
-# contexte
-
-Voici comment j'aimerais pouvoir travailler:
-
-  La gouvernance entre IA et humain se fait pas objection-sociocratique:
-
-  - l'humain soumet le problème
-  - l'agent IA propose une intervention sous forme d'un plan
-  - avant exécution du plan, l'humain peut émettre des objections raisonnées
-  - l'agent ne peut pas exécuter le plan tant qu'il y a des objections non résolus
-
-La base de travail sont des documents livrables suivants:
-
-- les plans
-- les recherches de fondations
-- le harnais (CLAUDE.md, CONSTITUTION.md et INTENTION.md)
-- les skills. Chaque type de livrable a un skill asocié qui encadre la production de ce livrable. C'est une spécification+requirement vivante
-
-
-L'humain n'a qu'un seul point d'entré: session.md  
-
-Et les Objections sont renseignés dans le fichier session.md
-
-L'Agent IA doit soulever des objections. Elles sont consignés dans le plan.
-
-Le objections de l'humain sont consignés dans session.md
+- README.md contenant un abstract de la présentation + ma bio + fiche de mon entreprise
+- le pdf de la présentation
+- un rapport de recherche
 
 
 
-# Spécification des livrables
+# Contexte
 
 
-## Plan de travail
+# Livrables
 
-Déposé dans @.dev/plans/PLN-<XYZ>-<SLUG>.md
-
-## Les harnais
-
-- @CLAUDE.md
-- @CONSTITUTION.md
-- @INTENTION.md
-
-
-## session.md
+- README de présentation
+- pdf de présentation
+- Rapport de recherche
 
 # Tâches
 
-## 1. planification
+## 1. Gérérer les ressources requises à partir du repo de la dernière présentation au RLQ
 
-Proposer un plan de travail dans le fichier @.dev/plans/PLN-001-setup-methodology.md
+Le répertoire $HOME/git/noumanity-communication/review_impact-of-PQC-risks-on-main-Linux-distributions
 
-## 2. more planif
+Contient une présentation donnée au RLQ de Québec.
 
-Prendre en compte les modification à ce document et étendre le plan en conséquense
+Analyser le dossier et 
 
-## 3. réponse aux objections & précisions
+- en déduire un skill spécialisé pour les README.md de présentation
+- en déduire un skill spécialisé pour l'écriture d'un script bash de génération de pdf pour présentation
+- analyser le script bash cli, le nettoyer/refactorer/améliorer et le mettre dans ce repo
 
-- la dépendance FDN-001, donc retirez
-- point 2: oui, les fichiers harnais peuvent être appellés à évoluer pour conrriger le comportement ou pour faire évoluer le concept. Ceci est un point central de la méthodologie. C'est fichiers ne sont pas écrits une fois, ils sont vivant et peuvent être appelés à changer. Même si typiquement leur cycle de vie est plus lent.
-- point 3: oui. produire le skill plan de travail. On ne l'utilise pas en ce moment parce qu'il n'existe pas. Mais il faut le créer
+TODO: préparer le plan et critiquer la tâche pour en relever les objections
 
-Tous les livrables "artefact-de-travail" produient ont la même nomenclature et convention:
+## 2. Réponse aux objections
 
-@.dev/<type>/<TYPE_PREFIX>-<SEQ>-<SLUG>.md
+### point 1
 
-sauf dans les cas où on a de contraintes à respecter comme les skills qui utilisent la convention de skills de Claude
+Oui, effectivement. Il n'y avait pas de section entreprise.
+Ceci et un ajout à la spécification. L'inclure dans le skill.
 
-## 4. Exécuter le plan PLN-001
+Recadrage. Pour l'instant, la demande n'est pas de produire le fichier README.md. Mais seulement le skill qui encadre sa rédaction / vérification. 
 
+Il est probable qu'il soit écrit par un humain et que l'agent n'ai qu'à en faire la vérification.
+
+### point 2
+
+Le script est fonctionnel. Mais il repose sur un usage local in-repo et sur une convention de nom de fichiers et de répertoires.
+
+Faites le nécessaire pour qu'il soit copier dans ce repo pour un usage in-repo de ce repo '@.'
+
+Ne pas faire un gros refactoring. Analyser le code. Puis:
+
+- apporter les améliorations mineurs qui ont un faible impact sur les fonctionnalités mais améliorent la robustesse.
+- Analyser la cohérence de l'interface cli (les commandes) au regard des pratiques standards de l'industrie.
+- Analyser l'architectur applicative actuelle
+- Proposer un plan d'indervention PLN-003
+
+### point 3
+
+Bien vu. Ajouter dans PLN-002, un skill de rédaction des ADR et la rédarcion d'un ADR regroupant tous les choix d'architecture de ce cli.
+
+La séquence d'exécution dans le plan doit être celle-ci:
+
+Redaction skill adr => analyse du cli => rédaction adr pour cli => redaction skill cli => codage du cli
+
+### point 4
+
+Ajouter, aux harness files CLAUDE.md et CONSTITUTION.md, le nécessaire pour prendre en compte tous les nouveaux livrables:
+
+
+- README de présentation
+- pdf de présentation
+- Rapport de recherche
+
+
+### TODO
+
+adapter le plan et dir es'il reste des objections
+
+## 3. exécuter le plan PLN-002

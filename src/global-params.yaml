@@ -1,0 +1,13 @@
+# global-params.yaml - parametres de design transversaux a toutes les diapositives
+# Ces valeurs sont la couche la plus basse de la cascade :
+#   global-params.yaml < config.yaml < global-params: (inline) < params: < content:
+# Edite par l'humain ; aucune valeur de marque n'est codee en dur dans le code.
+
+# Modele Beamer par defaut si absent de l'en-tete slide.
+default_model: plain
+
+# Couleur de fond globale (vide = aucun fond)
+background-color: '#EEE'
+
+# title:
+#  font-color: '#000'

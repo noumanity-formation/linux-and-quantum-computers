@@ -1,0 +1,26 @@
+colors:
+  orange: '#FA4D1F'
+  black: '#000000'
+  white: '#FFFFFF'
+
+palette:
+  frametitle_fg: '#000000'
+  progress_bar_bg: '#BFBFBF'
+  subitem_fg: '#FA8A70'
+  block_body_bg: '#F2F2F2'
+
+fonts:
+  body:
+    family: Arimo
+    bold: Arimo Bold
+    italic: Arimo Italic
+    bold_italic: Arimo Bold Italic
+  title:
+    family: ABeeZee
+    size: '\Large'
+  frametitle:
+    size: '\large'
+
+symbols:
+  item: '\textbullet'
+  subitem: '\textendash'
