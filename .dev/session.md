@@ -208,6 +208,47 @@ Assurer une valeur minimale par défaut suffisante pour la marge du bas.
 
 Utiliser la même méthode que la tâche 9 pour diagnostiquer.
 
+## 11. l'alignement vertical est à chier...
+
+s'assurer d'un bon alignement vertical et d'un espacement cohérent pour mettre en valeur les éléments selon leur importance.
+
+Voici les blocs d'information selon leur importance:
+
+bloc 1: titre
+bloc 2: photo + codeQR
+bloc 3: nom et titre de l'auteur
+bloc 4: infos sur la présentation ( date, nom de l'évènement, lieu de l'évènement, mention "Organisé par 🐧Martial Bigras")
+
+Ajouter l'émoji pingouin près du nom de Martiel
+
+Faire du bloc 4 un bloc cohérent en diminuant l'espace entre les 2 lignes
+
+Imposer un espacement égal entre bloc 2 et les blocs adjacents (haut + bas) 
+
+## 12. confusion à proposs de l'ordre d'affichage (placement) et l'ordre d'importance communicationnel
+
+
+Il ne fallait pas changer le positionnement des blocs d'information.
+
+ce sont 2 dimensions distinctes:
+
+Ordre d'apparition vertical
+
+- 1. bloc 1
+- 2. bloc 3
+- 3. bloc 2
+- 4. bloc 4 
+
+Ordre d'importance communicationnelle
+
+
+- 1. bloc 1
+- 2. bloc 2
+- 3. bloc 3
+- 4. bloc 4 
+
+Corriger
+
 ## x. Finaliser la recherche
 
 Thèse de la recherche:  "L'adoption de l'objection-sociocratique comme unique règle constitut un framework cohérent et complet pour le fonctionnement de communautés de pratiques intentionnés"
@@ -216,7 +257,7 @@ Argumentaire Principal:
 
 - Toute les communautés sont des communautés de pratiques ET d'intention
 - Richard Stallman a créé une communauté d'intention clairement assumé: Liberté de faire comme principe fondateur
-- 
+- Beaucoup de communauté n'explicitent pas leurs intenitons. Mais TOUTEs les commaunautés ont une intention partagée
 
 
 

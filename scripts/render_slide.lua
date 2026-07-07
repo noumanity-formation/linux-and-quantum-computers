@@ -37,11 +37,25 @@ local TEX_ESCAPES = {
   ["^"]  = "\\^{}",
 }
 
+-- Emojis geres explicitement (glyphes absents des polices de corps Arimo/ABeeZee) :
+-- enveloppes dans \NouEmojiFont (Noto Color Emoji, cf. preamble.tex) pour rester visibles.
+local EMOJI_FONT_WRAP = {
+  ["\240\159\144\167"] = true, -- U+1F427 pingouin
+}
+
+local function wrap_emoji(s)
+  for emoji in pairs(EMOJI_FONT_WRAP) do
+    s = s:gsub(emoji, "{\\NouEmojiFont " .. emoji .. "}")
+  end
+  return s
+end
+
 local function tex_escape(s)
   -- yaml.null de tinyyaml est une table ; nil et tables -> chaine vide
   if type(s) == "table" then s = ""
   elseif type(s) ~= "string" then s = tostring(s or "") end
-  return (s:gsub(".", function(c) return TEX_ESCAPES[c] or c end))
+  local escaped = (s:gsub(".", function(c) return TEX_ESCAPES[c] or c end))
+  return wrap_emoji(escaped)
 end
 
 local function inline_md(s)

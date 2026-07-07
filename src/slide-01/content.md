@@ -8,7 +8,7 @@ content:
       role: "Stratégie & Leadership des pratiques de sécurité | DevSecOps"
   date: "7 juillet 2026"
   event: "Rencontres Linux du Québec"
-  location: "ÉTS - École de technologie supérieure — Organisé par Martial Bigras"
+  location: "ÉTS - École de technologie supérieure — Organisé par 🐧Martial Bigras"
   photo: "@src/assets/photo-auteur.jpg"
   qr-image: "@dist/qrcode-repo.png"
 ---

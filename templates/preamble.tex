@@ -15,6 +15,14 @@
 % Macro pour les listes compactes (produite par le renderer Lua)
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
+% Police emoji (repli silencieux si absente) - utilisee par render_slide.lua
+% pour envelopper automatiquement les emojis rencontres dans le contenu (ex. 🐧).
+\IfFontExistsTF{Noto Color Emoji}{%
+  \newfontfamily\NouEmojiFont{Noto Color Emoji}[Renderer=Harfbuzz]%
+}{%
+  \newcommand\NouEmojiFont{}%
+}
+
 % Options de theme generees depuis src/theme.yaml
 \InputIfFileExists{theme.generated.tex}{}{}
 

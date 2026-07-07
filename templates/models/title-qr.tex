@@ -1,33 +1,52 @@
 % Modele : title-qr - page de titre, photo + QR (image) centres sous le nom
 % Champs optionnels : title_tex, authors_formatted, event_tex, date_tex, location_tex, photo_path, qr_image_path
+%
+% Marge de securite : 1.4cm a gauche/droite (comme le bloc infos evenement).
+% Marge du haut : 0.6cm, alignee sur la convention deja en place dans les autres
+% gabarits du deck (plain/tableau/equation/remerciements). Tous les
+% blocs sont en flux normal (pas de tikz overlay absolu) : la position verticale de
+% chaque bloc depend uniquement de la hauteur cumulee des blocs precedents, ce qui
+% evite tout risque de chevauchement entre un bloc en flux et un bloc ancre en absolu
+% (bug observe et corrige a la tache 11 - le bloc auteur chevauchait le bloc infos
+% evenement quand ce dernier etait un tikz overlay independant du flux).
+%
+% Deux dimensions distinctes (tache 12, correction de la tache 11) :
+%   - ordre d'apparition vertical : bloc 1 (titre) > bloc 3 (nom+titre auteur)
+%     > bloc 2 (photo+QR) > bloc 4 (infos evenement) - INCHANGE depuis la version
+%     d'origine, ne pas reordonner selon l'importance.
+%   - ordre d'importance communicationnelle : bloc 1 > bloc 2 > bloc 3 > bloc 4 -
+%     sert uniquement a doser l'emphase/l'espacement, pas la position verticale.
+% \NouBlocGap : meme valeur au-dessus et en-dessous du bloc 2 (photo+QR) dans
+% l'ordre d'apparition ci-dessus, donc entre bloc 3->bloc 2 et bloc 2->bloc 4.
+\newcommand{\NouBlocGap}{1.0em}
+
 \begin{frame}[plain]
 <%- background_block %>
 
-% Marge de securite : 1.4cm sur les 4 bords (memes valeurs que le bloc evenement/date/lieu).
-% \vspace fixe plutot que \vfill : un \vfill peut s'ecraser a 0 si le contenu fixe
-% (titre + auteurs + photo/QR) depasse la hauteur de page disponible - c'est ce qui
-% causait un titre colle au bord superieur (marge haute mesuree a 0cm).
-\vspace{1.4cm}
+\vspace{0.6cm}
 \hspace*{1.4cm}\begin{minipage}{\dimexpr\paperwidth-2.8cm\relax}
   {\NouTitleFont\fontsize{21}{21}\selectfont\color{NoumanityBlack}\raggedright <%- title_tex %>\par}
-  \vspace{1.5em}
+\end{minipage}
+
+\vspace{\NouBlocGap}
+\hspace*{1.4cm}\begin{minipage}{\dimexpr\paperwidth-2.8cm\relax}
   {\small\color{NoumanityBlack}\raggedright <%- authors_formatted %>\par}
 \end{minipage}
-\vspace{1.2em}
+
+\vspace{\NouBlocGap}
 \begin{center}
 <% if photo_path and photo_path ~= "" then %>\includegraphics[height=1.9cm]{<%- photo_path %>}<% end %><% if photo_path and photo_path ~= "" and qr_image_path and qr_image_path ~= "" then %>\hspace{1.5em}<% end %><% if qr_image_path and qr_image_path ~= "" then %>\includegraphics[height=1.9cm]{<%- qr_image_path %>}<% end %>
 \end{center}
-\vspace{1.4cm}
 
-\begin{tikzpicture}[remember picture, overlay]
-  \node[anchor=south west, inner sep=0pt, xshift=1.4cm, yshift=0.2cm]
-    at (current page.south west) {%
-      \begin{minipage}{0.85\paperwidth}
-        \raggedright
-        {\footnotesize\color{NoumanityBlack!60}
-          <%- event_tex %> \textbullet{} <%- date_tex %>\par
-          \vspace{0.2em}
-          <%- location_tex %>}
-      \end{minipage}};
-\end{tikzpicture}
+% yshift=0.5cm de l'ancien overlay -> ~1.2em de vspace en flux : ordre de grandeur
+% similaire, valeur minimale par defaut pour la marge du bas (tache 10 : mesuree a
+% ~0.2cm avant correctif, jugee trop petite). \scriptsize compacte le bloc.
+\vspace{0.6em}
+\hspace*{1.4cm}\begin{minipage}{0.85\paperwidth}
+  \raggedright
+  {\scriptsize\color{NoumanityBlack!60}
+    <%- event_tex %> \textbullet{} <%- date_tex %>\par
+    \vspace{0.05em}
+    <%- location_tex %>}
+\end{minipage}
 \end{frame}
