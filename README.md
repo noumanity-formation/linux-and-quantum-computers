@@ -1,6 +1,6 @@
 # L'objection-sociocratique comme core de gouvernance léger pour les petites communautés open source.
 
-Présentation préparée pour les [Rencontres Linux du Québec](https://www.rencontres-linux.quebec/en_CA/event/rencontre-linux-7-juillet-2026-53), édition du 7 juillet 2026 présenté à l'[ÉTS - École de Technologies Supérieur de Montréal](https://www.linkedin.com/school/etsmtl/).
+Présentation préparée pour les [Rencontres Linux du Québec](https://www.rencontres-linux.quebec/en_CA/event/rencontre-linux-7-juillet-2026-53), édition du 7 juillet 2026 présenté à l'[ÉTS - École de technologie supérieure](https://www.linkedin.com/school/etsmtl/).
 
 ## Résumé
 
@@ -8,11 +8,11 @@ Avez-vous déjà vécu un projet Libre et Ouvert?
 🤔
 
 C'est une expérience très enrichissante que je souhaite à tous. 👌
-Idéal si vous chercher à monter en compétences, développer votre leadership et atteimdre un niveau avancé de maturité technologique.
+Idéal si vous cherchez à monter en compétences, développer votre leadership et atteindre un niveau avancé de maturité technologique.
 
 Après tout, la pièce de technologique industrielle la plus aboutie et la plus avancée de l'histoire de l'humanité 👉Linux 👈, nous prouve l'efficacité d'une combinaison de licences non-privative et de méthodes de travail non-contrôlantes.
 
-Cependant, ça peut rapidement dégénérer en conflits ascerbe et désastreux pour la viabilité de vos technos lorsque l'on met uniquement l'emphase sur les technicalité et que l'on néglige la gouvernance.
+Cependant, ça peut rapidement dégénérer en conflits acerbes et désastreux pour la viabilité de vos technos lorsque l'on met uniquement l'emphase sur les aspects techniques et que l'on néglige la gouvernance.
 
 Pour les communautés de pratiques (les "doers"), l'objection-sociocratique est un framework de gouvernance minimaliste à 1 règle qui vous permettra d'avancer rapidement tout en préservant la cohésion de groupe nécessaire pour tout projet ambitieux. 🦋
 
@@ -28,18 +28,19 @@ Le travail présenté ce soir est le fruit de 26 ans et 10 mois de **recherche-a
 
 ## Financé par noumanity
 
-Groupe Innovation Numanity inc. ou, plus simplement, **noumanity** et une un Studio DeepTech, le premier dans la ville de Québec et probablement le seul bootstraped/auto-financé au Canada.
+<img src="https://raw.githubusercontent.com/noumanity/imagen/refs/heads/main/assets/logo/logo%20noumanity-color2.png" width="200" />
 
 > No hype. Just prouve it.
-
 > Zéro hype, que de la preuve.
+
+Groupe Innovation Numanity inc. ou, plus simplement, **noumanity** est un Studio DeepTech, le premier dans la ville de Québec et probablement le seul bootstrappé/auto-financé au Canada.
 
 **noumanity** se consacre à l'accélération du déploiement de technologies avancées à haute teneur scientifique.
 
-Via des Consortiums mis sur pied et supportés par **noumanity**, de nouvelles connaisances et des technologie !00% libres et ouvertes sont rendues disponible à tous ceux et celles qui ont à coeur le bien de l'humanité.
+Via des Consortiums mis sur pied et supportés par **noumanity**, de nouvelles connaissances et des technologies 100% libres et ouvertes sont rendues disponibles à tous ceux et celles qui ont à coeur le bien de l'humanité.
 
 Le portefeuille de projets de **noumanity** contient actuellement:
 
 - [Studio Horizon IA](https://www.linkedin.com/company/studio-horizon-ia/) hébergé à [La Console](https://www.laconsole.org/): Une communauté de pratique en Intelligence Artificielle rassemblée pour propulser la prospérité technologique à Québec.
 - **Initiative Davos SecOps**:
-- **Consortium pour la Santé Numérique, en soutien aux artisans du réseau de la santé mondiale et aux patients**: [en cours de montage] recgroupement de chercheurs en santé et d'entreprises en innovations technologique qui co-construisent une Plateforme Infonuagique Souveraine en santé numérique. Déployé au Québec et au Cameroun.
+- **Consortium pour la Santé Numérique, en soutien aux artisans du réseau de la santé mondiale et aux patients**: [en cours de montage] regroupement de chercheurs en santé et d'entreprises en innovations technologique qui co-construisent une Plateforme Infonuagique Souveraine en santé numérique. Déployé au Québec et au Cameroun.

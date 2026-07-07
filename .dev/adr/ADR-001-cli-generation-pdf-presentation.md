@@ -26,7 +26,7 @@ Contrainte de délai : la présentation a lieu le jour même de cette décision 
 - *Alternatives écartées* : loger le CLI sous `.dev/` avec le reste des livrables de gouvernance — écartée car le CLI n'est pas un document de gouvernance versionné avec séquence (`PLN-`, `FND-`, `ADR-`), c'est un outil applicatif ; le mélanger aux livrables de gouvernance aurait cassé la convention `.dev/<type>/<PREFIX>-<SEQ>-<SLUG>.md`.
 
 ### Portée du portage
-- **Décision** : copie fonctionnelle + améliorations mineures à faible impact sur la robustesse uniquement. Les constats plus lourds (cohérence de l'interface CLI au regard des pratiques standards de l'industrie, architecture applicative actuelle) sont consolidés séparément et proposés dans un plan distinct (`PLN-003`), non exécutés ici.
+- **Décision** : copie fonctionnelle + améliorations mineures à faible impact sur la robustesse uniquement. Les constats plus lourds (cohérence de l'interface CLI au regard des pratiques standards de l'industrie, architecture applicative actuelle) sont consolidés séparément et proposés dans un plan distinct (`PLN-004`), non exécutés ici.
 - *Alternative écartée* : refactoring en profondeur dans le cadre de ce portage — explicitement écartée par l'humain (session.md, tâche 2, point 2 : « Ne pas faire un gros refactoring »).
 
 ### Dépendances système
@@ -43,11 +43,11 @@ Contrainte de délai : la présentation a lieu le jour même de cette décision 
 - Dépendances système lourdes (TeX Live quasi complet) requises dans tout environnement voulant régénérer le pdf ; `luarocks` absent dans cet environnement, à vérifier/vendoriser.
 - Aucun test automatisé sur le CLI (hérité du dépôt source) ; la vérification reste manuelle (génération + inspection visuelle du pdf).
 - Couplage aux conventions héritées (`src/slide-<SEQ>/content.md`, `templates/models/*.yaml`) : tout changement de convention nécessitera de revisiter le moteur Lua, pas seulement `dev.sh`.
-- Interface CLI et architecture applicative non revues en profondeur dans ce portage (voir `PLN-003`) : les défauts identifiés (ex. absence de `-h`, pas de `--version`, config résolue inconditionnellement même pour des commandes qui n'en ont pas besoin) subsistent tels quels après ce portage.
+- Interface CLI et architecture applicative non revues en profondeur dans ce portage (voir `PLN-004`) : les défauts identifiés (ex. absence de `-h`, pas de `--version`, config résolue inconditionnellement même pour des commandes qui n'en ont pas besoin) subsistent tels quels après ce portage.
 
 ## Migration / porte de sortie
 
-Cette décision ne figera pas la stack au-delà de ce qui est nécessaire : l'abstraction contenu/modèle héritée de l'ADR source préserve la possibilité de changer de moteur de rendu plus tard sans réécrire le contenu des diapositives. Les interventions plus lourdes sur l'interface CLI et l'architecture applicative, si elles sont retenues, seront proposées et actées via `PLN-003`, pas par cet ADR.
+Cette décision ne figera pas la stack au-delà de ce qui est nécessaire : l'abstraction contenu/modèle héritée de l'ADR source préserve la possibilité de changer de moteur de rendu plus tard sans réécrire le contenu des diapositives. Les interventions plus lourdes sur l'interface CLI et l'architecture applicative, si elles sont retenues, seront proposées et actées via `PLN-004`, pas par cet ADR.
 
 ## Références
 

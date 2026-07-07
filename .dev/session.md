@@ -14,6 +14,7 @@ Produire le matériel accompagnant ma présentation à la Rencontre Linux au Qu�
 
 # Contexte
 
+Je donne ma présentation dans une heure. Il faut accélérer.
 
 # Livrables
 
@@ -84,3 +85,58 @@ Ajouter, aux harness files CLAUDE.md et CONSTITUTION.md, le nécessaire pour pre
 adapter le plan et dir es'il reste des objections
 
 ## 3. exécuter le plan PLN-002
+
+
+## 4. Planifier la révision du readme
+
+Le plan PLN-003 ne sera pas exécuté durant cette session. Renommez le PLN-00X.
+
+Créer un plan pour la révision rapide du readme.
+
+Ce qui est important:
+
+- aucune inexactitude
+- aucune fautes
+
+objectif de communication: faire reconnaitre la compétence de l'auteur en matière d'organisation de projets open source
+
+audience: acteurs du milieu open source qu Québec
+
+TODO: rédiger le plan
+
+
+## x.  Planifier la préparation du pdf support à la présentation
+
+La présentation est un atelier pratique de 5 minutes sur le mécanisme de l'objection-sociocratique.
+
+Aucune slide ne doit avoir de pied de page
+
+Slide 1: page de présentation
+Contient :
+- titre de la présentation
+- nom de l'auteur
+- photo de l'auteur + Code QR pointant vers: https://github.com/noumanity-formation/intentional-dooers-governance  + aux couleurs de noumanity (code qr noir + logo de noumanity au centre https://github.com/noumanity/imagen/blob/main/assets/isotipo/isotipo%20noumanity-color.png)
+- date, nom de l'évènement, lieu de l'évènement
+- mention "Organisé par 🐧Martial Bigras"
+
+
+
+Slide 2: proposition => Renommer REL pour ReLaQx pour éviter la confusion avec RLQ == Réseau des Lesbiennes du Québec
+
+Slide 3: Remerciement & Questions
+
+Contient: code QR pour le matériel supplémentaire
+
+
+!!IMPORTANT!!
+
+Voici comment nous allons produire le pdf:
+
+- 1. produire le contenu dans fichier markdown+yaml
+- 2. (au besoin) adapter le script bash
+- 3. produite le pdf en exécutant le script et mettre dans @dist/**.pdf
+
+TODO: 
+
+Rédiger le plan et si aucune objection majeure => exécuter
+

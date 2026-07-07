@@ -13,7 +13,7 @@ description: >-
 
 ## Quand l'utiliser
 
-Quand une tâche demande de modifier `scripts/dev.sh` ou un composant de son moteur de rendu (scripts Lua, templates `.tex`/`.yaml`) dans ce dépôt : ajout de commande, correctif de robustesse, évolution mineure. Ne pas utiliser pour changer de stack de rendu (LuaLaTeX/Beamer → autre chose) sans passer d'abord par `skl-006-adr` pour amender ou remplacer `ADR-001`. Ne pas utiliser non plus pour une refonte d'architecture ou d'interface CLI de grande ampleur : ce type d'intervention se propose via un plan dédié (voir `PLN-003`), pas directement dans ce skill.
+Quand une tâche demande de modifier `scripts/dev.sh` ou un composant de son moteur de rendu (scripts Lua, templates `.tex`/`.yaml`) dans ce dépôt : ajout de commande, correctif de robustesse, évolution mineure. Ne pas utiliser pour changer de stack de rendu (LuaLaTeX/Beamer → autre chose) sans passer d'abord par `skl-006-adr` pour amender ou remplacer `ADR-001`. Ne pas utiliser non plus pour une refonte d'architecture ou d'interface CLI de grande ampleur : ce type d'intervention se propose via un plan dédié (voir `PLN-004`), pas directement dans ce skill.
 
 ## Processus
 

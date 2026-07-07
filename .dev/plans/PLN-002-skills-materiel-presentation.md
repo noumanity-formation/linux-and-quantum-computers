@@ -8,7 +8,7 @@
 
 - **v1** : proposition initiale (tâche 1 de `session.md`), basée sur l'analyse en lecture seule du dépôt source. Quatre objections agent soulevées.
 - **v2** : intégration des réponses de l'humain (tâche 2 de `session.md`) aux quatre objections. Ajout de deux nouveaux livrables demandés (`skl-<SEQ>-adr` et un ADR pour le CLI porté) et de la mise à jour des harnais pour les nouveaux types de livrables. Séquence d'exécution imposée par l'humain. Les quatre objections v1 sont résolues ; deux décisions d'implémentation non explicitement tranchées par l'humain sont signalées en clair (pas comme objections bloquantes) pour permettre une correction avant exécution.
-- **v3** (courante) : exécution (tâche 3 de `session.md`, « exécuter le plan PLN-002 »), aucune correction reçue sur les deux décisions signalées en v2 — traitées comme acceptées tacitement. Les 9 étapes ont été exécutées dans l'ordre prévu : `skl-005-readme-presentation`, mise à jour de `CLAUDE.md`, `skl-006-adr`, analyse du CLI, `ADR-001-cli-generation-pdf-presentation.md`, `skl-007-script-pdf-presentation`, portage du CLI in-repo (avec test de fumée réussi : génération d'un pdf de test, puis nettoyage des artefacts de test), et proposition de `PLN-003` pour les interventions plus lourdes.
+- **v3** (courante) : exécution (tâche 3 de `session.md`, « exécuter le plan PLN-002 »), aucune correction reçue sur les deux décisions signalées en v2 — traitées comme acceptées tacitement. Les 9 étapes ont été exécutées dans l'ordre prévu : `skl-005-readme-presentation`, mise à jour de `CLAUDE.md`, `skl-006-adr`, analyse du CLI, `ADR-001-cli-generation-pdf-presentation.md`, `skl-007-script-pdf-presentation`, portage du CLI in-repo (avec test de fumée réussi : génération d'un pdf de test, puis nettoyage des artefacts de test), et proposition de `PLN-004` pour les interventions plus lourdes.
 
 ---
 
@@ -26,7 +26,7 @@ Produire le matériel accompagnant la présentation du 2026-07-07 à la Rencontr
 Analyse en lecture seule du dépôt source (aucune modification apportée à ce dépôt tiers), et réponses de l'humain (tâche 2 de `session.md`) :
 
 - **`README.md`** (39 lignes) suit un patron régulier : titre accrocheur → mention de l'événement/date → `## Résumé` (abstract narratif) → `## Auteurs` avec, par auteur, un sous-titre `### [Nom](LinkedIn) - Rôle`, une image de profil, et une bio en prose. **Aucune section « fiche entreprise » distincte** n'existe dans la source — confirmé par l'humain comme une lacune réelle à corriger : la spécification du skill doit inclure cette section. **Recadrage humain important** : ce skill n'a pas vocation à faire *rédiger* le README par l'agent — le README sera probablement écrit par un humain ; le skill doit encadrer aussi bien sa **production** que sa **vérification** par l'agent.
-- Le « script bash de génération de PDF » est en réalité `scripts/dev.sh` (307 lignes, `set -euo pipefail`), un **orchestrateur CLI** qui pilote un moteur de rendu **LuaLaTeX/Beamer** (4 scripts Lua + templates `.tex`/`.yaml`). L'humain confirme : **le script est fonctionnel**, il doit être **copié dans ce dépôt pour un usage in-repo** (pas seulement un patron générique abstrait) ; **pas de gros refactoring** — seulement des améliorations mineures à faible impact sur la robustesse, plus deux analyses (cohérence de l'interface CLI vs pratiques standards de l'industrie ; architecture applicative actuelle) dont les constats plus lourds sont reportés dans un **nouveau plan PLN-003**, pas exécutés ici.
+- Le « script bash de génération de PDF » est en réalité `scripts/dev.sh` (307 lignes, `set -euo pipefail`), un **orchestrateur CLI** qui pilote un moteur de rendu **LuaLaTeX/Beamer** (4 scripts Lua + templates `.tex`/`.yaml`). L'humain confirme : **le script est fonctionnel**, il doit être **copié dans ce dépôt pour un usage in-repo** (pas seulement un patron générique abstrait) ; **pas de gros refactoring** — seulement des améliorations mineures à faible impact sur la robustesse, plus deux analyses (cohérence de l'interface CLI vs pratiques standards de l'industrie ; architecture applicative actuelle) dont les constats plus lourds sont reportés dans un **nouveau plan PLN-004**, pas exécutés ici.
 - L'humain demande d'ajouter un **skill de rédaction des ADR** et la **rédaction d'un ADR** regroupant les choix d'architecture de ce CLI, avec une séquence d'exécution imposée : *rédaction skill ADR → analyse du CLI → rédaction ADR pour le CLI → rédaction skill CLI → codage du CLI*.
 - L'humain demande la mise à jour de `CLAUDE.md`/`CONSTITUTION.md` pour couvrir les nouveaux livrables listés dans `session.md` : **README de présentation, pdf de présentation, rapport de recherche**. Ces trois éléments sont les livrables *finaux* de la présentation (voir section « Livrables » de `session.md`) ; le CLI/ADR/skills sont l'outillage de gouvernance qui les produit, pas ces livrables eux-mêmes.
 - **Vérification d'environnement** (nécessaire pour juger la faisabilité du portage in-repo) : dans cet environnement, `texlua` et `lualatex` sont disponibles ; `latexmk` et `luarocks` sont **absents**. `dev.sh` gère déjà l'absence de `latexmk` par un repli sur double passe `lualatex` directe — pas un problème bloquant. L'absence de `luarocks` doit être vérifiée à l'étape « analyse du CLI » (les modules Lua requis, ex. `etlua`, sont en partie vendorisés dans `scripts/lib/` côté source ; à confirmer pour les autres, ex. `lunamark`).
@@ -40,7 +40,7 @@ Analyse en lecture seule du dépôt source (aucune modification apportée à ce 
 - **`ADR-001-<slug>`** (`.dev/adr/ADR-001-<slug>.md`) : regroupe les choix d'architecture du CLI porté dans ce dépôt (stack, dépendances, conventions in-repo), produit avec `skl-006-adr`.
 - **`skl-007-script-pdf-presentation`** (`.dev/skills/skl-007-script-pdf-presentation/SKILL.md`) : encadre l'écriture/l'évolution du script bash d'orchestration pour ce dépôt, informé par l'ADR-001 — la stack LuaLaTeX/Beamer y est donc documentée comme un **choix explicite de ce dépôt**, pas silencieusement figée.
 - Le **CLI porté** : `scripts/dev.sh` + moteur Lua (`compute_numbering.lua`, `render_slide.lua`, `model_helper.lua`, `theme_helper.lua`, `lib/etlua.lua`) + `templates/` + `activate`, copiés à la racine de ce dépôt (miroir de la convention source — voir plan, étape 1), avec améliorations mineures de robustesse seulement.
-- **`PLN-003`** (`.dev/plans/PLN-003-<slug>.md`) : plan d'intervention proposé (pas exécuté dans ce plan-ci), basé sur les constats de l'analyse de cohérence CLI et d'architecture applicative.
+- **`PLN-004`** (`.dev/plans/PLN-004-<slug>.md`) : plan d'intervention proposé (pas exécuté dans ce plan-ci), basé sur les constats de l'analyse de cohérence CLI et d'architecture applicative.
 - Mise à jour de `CLAUDE.md` et `CONSTITUTION.md` (via `skl-004-harnais`) : ajout au tableau des livrables de README de présentation, pdf de présentation, rapport de recherche, et ADR.
 
 ## Plan proposé
@@ -60,7 +60,7 @@ Ajouter au tableau des livrables : README de présentation, pdf de présentation
 Premier maillon de la chaîne imposée par l'humain. Gabarit et processus de production d'un ADR, réutilisable au-delà du CLI présent.
 
 ### 5. Analyse du CLI
-Analyse (déjà largement réalisée en amont de ce plan, à consolider) du code de `scripts/dev.sh` et du moteur Lua/LaTeX : dépendances système (vérifiées dans cet environnement : `texlua`/`lualatex` présents, `latexmk`/`luarocks` absents — à documenter), cohérence de l'interface CLI (sous-commandes, options) au regard des pratiques standards de l'industrie, architecture applicative actuelle (couplages, responsabilités). Ces constats alimentent à la fois l'ADR (étape 6) et la proposition PLN-003 (étape 9).
+Analyse (déjà largement réalisée en amont de ce plan, à consolider) du code de `scripts/dev.sh` et du moteur Lua/LaTeX : dépendances système (vérifiées dans cet environnement : `texlua`/`lualatex` présents, `latexmk`/`luarocks` absents — à documenter), cohérence de l'interface CLI (sous-commandes, options) au regard des pratiques standards de l'industrie, architecture applicative actuelle (couplages, responsabilités). Ces constats alimentent à la fois l'ADR (étape 6) et la proposition PLN-004 (étape 9).
 
 ### 6. Rédaction de l'ADR pour le CLI
 Avec `skl-006-adr` et les constats de l'étape 5 : regrouper les choix d'architecture du CLI tel que porté dans ce dépôt (stack LuaLaTeX/Beamer/Lua reprise du dépôt source, dépendances système, emplacement in-repo décidé à l'étape 1).
@@ -71,7 +71,7 @@ Informé par l'ADR-001 (étape 6) : encadrer l'écriture/l'évolution du script 
 ### 8. Codage du CLI
 Copier le script et le moteur Lua/LaTeX dans ce dépôt (emplacement de l'étape 1), adapter les chemins/conventions in-repo, appliquer **uniquement** les améliorations mineures à faible impact sur la robustesse identifiées à l'étape 5 — pas de refactoring en profondeur.
 
-### 9. Proposer `PLN-003`
+### 9. Proposer `PLN-004`
 Nouveau plan (non exécuté ici) portant les interventions plus lourdes suggérées par l'analyse de cohérence CLI et d'architecture applicative de l'étape 5.
 
 ### 10. Validation humaine
@@ -82,7 +82,7 @@ Ce plan passe au statut *résolu* : les quatre objections agent v1 sont résolue
 ## Objections de l'agent IA
 
 1. ~~Lacune du patron source pour la « fiche entreprise »~~ — **résolu** : confirmé par l'humain (tâche 2, point 1), section ajoutée à la spécification de `skl-005`, skill recadré production+vérification.
-2. ~~Ambiguïté de portée sur le script~~ — **résolu** : l'humain tranche (tâche 2, point 2) pour un portage complet in-repo, sans gros refactoring, avec analyses reportées vers `PLN-003`.
+2. ~~Ambiguïté de portée sur le script~~ — **résolu** : l'humain tranche (tâche 2, point 2) pour un portage complet in-repo, sans gros refactoring, avec analyses reportées vers `PLN-004`.
 3. ~~Sur-figement technologique dans le skill~~ — **résolu** : l'humain choisit explicitement de documenter ce figement via un ADR dédié (tâche 2, point 3) avant de rédiger `skl-007-script-pdf-presentation`, ce qui rend le choix de stack traçable plutôt que silencieux.
 4. ~~Absence de convention pour un livrable « script » dans ce dépôt~~ — **résolu** : le CLI n'est pas traité comme un livrable-document gouverné (voir étape 1) ; les livrables-documents qui l'entourent (ADR, skills) sont, eux, ajoutés à `CLAUDE.md`/`CONSTITUTION.md` (tâche 2, point 4, étendu à ADR par cohérence directe).
 

@@ -1,6 +1,13 @@
-# PLN-003 — Interventions sur le CLI de génération du pdf de présentation
+# PLN-004 — Interventions sur le CLI de génération du pdf de présentation
 
 **Statut : proposé**
+
+---
+
+## Changelog
+
+- **v1** : proposition initiale sous le nom `PLN-003` (tâche 3 de `session.md`, exécution de `PLN-002` étape 9).
+- **v2** (courante) : renumérotée `PLN-004` (tâche 4 de `session.md`) — le numéro `PLN-003` est libéré pour un plan plus urgent (révision du README avant la présentation, dans l'heure). Contenu inchangé, seule la numérotation et les références croisées sont mises à jour.
 
 ---
 
