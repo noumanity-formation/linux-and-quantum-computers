@@ -249,21 +249,39 @@ Ordre d'importance communicationnelle
 
 Corriger
 
-## x. Finaliser la recherche
+## 13. Finaliser la recherche
 
-Thèse de la recherche:  "L'adoption de l'objection-sociocratique comme unique règle constitut un framework cohérent et complet pour le fonctionnement de communautés de pratiques intentionnés"
+**Thèse de la recherche**:  "L'adoption de l'objection-sociocratique comme unique règle constitut un framework cohérent et complet pour le fonctionnement de communautés de pratiques intentionnés"
 
-Argumentaire Principal:
+**Argumentaire**:
 
 - Toute les communautés sont des communautés de pratiques ET d'intention
 - Richard Stallman a créé une communauté d'intention clairement assumé: Liberté de faire comme principe fondateur
-- Beaucoup de communauté n'explicitent pas leurs intenitons. Mais TOUTEs les commaunautés ont une intention partagée
+- Beaucoup de communauté n'explicitent pas leurs intentions. Mais TOUTEs les commaunautés ont une intention partagée. C'est la raison d'être de la communauté. Si il n'y a pas d'intention commune, la communauté ne tient pas.
+- Linus Torval avait une intention autre que celle de Richard Stallman. Il a donc adapté la gouvernance de sa communauté pour prendre en compte cette intention différente. Aussi, il a créé un outil (git) + de nouvelles licence + fondation. Exactement le même pattern que Stallman avait fait avant lui.
+- l'erreur de Torval a été de croire qu'il n'avait pas d'intention idéologique. Son intention idéologique et de créer un produit industriel révolutionnaire.
+- Torval a réussi son intention et sa communauté l'a bien intégré
+- Malheureusement, sa structure de gouvernance (Benevolent Dictatorship) met en péril la viabilité à long terme de Linux
 
 
 
 TODO:
 
-- Consulter la recherche préliminaire dans 
+- Consulter la recherche préliminaire dans @.dev/source-material/SRCM-001-analyse-avec-poe.com/linux-communaute-intention-vs-communaute-pratique
+- Définir les recherches de fondations nécessaires pour étailler la Thèse et l'Argumantaire 
+- Dire si la thèse tient ou pas
+- Formuler une critique de l'argumentaire et émettre des objections
+- rédiger un plan pour la rédaction
+
+## 14. Réaliser la recherche avant de se prononcer
+
+Effectuer les tâches suivantes:
+
+- Consulter la recherche préliminaire dans @.dev/source-material/SRCM-001-analyse-avec-poe.com/linux-communaute-intention-vs-communaute-pratique
+- Définir les recherches de fondations nécessaires pour étailler la Thèse et l'Argumantaire 
+- Dire si la thèse tient ou pas
+- Formuler une critique de l'argumentaire et émettre des objections
+
+Le plan ne concerne que la rédaction d'un article scientifique qui nécessitera plus de travail et qui sera fait plus tard
 
 
-## 
