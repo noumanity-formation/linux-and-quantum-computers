@@ -2,8 +2,11 @@
 diapo:
   model: plain
 content:
-  title: "Accéder au calcul quantique via PINQ²"
+  title: "Le QPU, un accélérateur (comme le GPU)"
   section: "Ordinateur quantique"
-  image: "@src/assets/qiskit-flux.pdf"
-  caption: "Le QPU est un accélérateur. À l'ère quantique, le sysadmin pilote l'accélérateur quantique."
+  image: "@src/assets/gpu-qpu.pdf"
 ---
+
+Comme un GPU, un ordinateur quantique est un **accélérateur** branché sur un hôte classique (sous **Linux**), qui prépare le travail et récupère le résultat.
+
+- GPU (pilote DRM/KMS) ou QPU (pile de contrôle) : dans les deux cas, **Linux orchestre**

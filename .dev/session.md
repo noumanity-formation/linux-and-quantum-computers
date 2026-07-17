@@ -161,3 +161,18 @@ Ajouter le logo de noumanity + "Studio DeepTech" sur la page de remerciement
 ### expliquer les transmons
 
 Ajouter un schéma expliquant c'est quoi un transmon après la slide 2.2
+
+## 11. améliorations
+
+à la slide 2.5 => 
+
+Changer le titre et mettre en relation avec l'architechture les gpu
+
+Mettre la slide "Accéder au calcul quantique via pinq2" après.
+y mettre  "desktop + Qiskit" <-> "PinQ2" <-> IBM
+
+## 12. améliorations
+
+Produire une version en anglais
+
+Tout en conservant celle en français
