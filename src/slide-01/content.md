@@ -11,6 +11,6 @@ content:
   location: "Sherbrooke"
   photo: "@src/assets/photo-auteur.jpg"
   qr-image: "@dist/qrcode-repo.png"
-  brand-logo: "@src/assets/isotipo-noumanity.png"
+  brand-logo: "@src/assets/logo-noumanity-color2.png"
   brand-tagline: "Studio DeepTech"
 ---

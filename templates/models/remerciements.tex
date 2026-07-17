@@ -34,4 +34,15 @@
       \end{minipage}};
 \end{tikzpicture}
 <% end %>
+<% if brand_logo_path and brand_logo_path ~= "" then %>
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=south west, inner sep=0pt, xshift=1.4cm, yshift=0.4cm]
+    at (current page.south west) {%
+      \begin{minipage}{6cm}
+        \raggedright
+        \includegraphics[height=1.0cm]{<%- brand_logo_path %>}\par
+        <% if brand_tagline_tex and brand_tagline_tex ~= "" then %>\vspace{0.15em}{\scriptsize\color{NoumanityBlack!70} <%- brand_tagline_tex %>}<% end %>
+      \end{minipage}};
+\end{tikzpicture}
+<% end %>
 \end{frame}
