@@ -25,6 +25,7 @@ Pour toute demande, tenir compte de :
 | Harnais | `CLAUDE.md`, `CONSTITUTION.md`, `INTENTION.md` | `skl-004-harnais` |
 | Skill | `.dev/skills/skl-<SEQ>-<nom>/SKILL.md` | `skl-001-skill-writer` |
 | ADR | `.dev/adr/ADR-<SEQ>-<SLUG>.md` | `skl-006-adr` |
+| Analyse | `.dev/analyses/ANL-<SEQ>-<SLUG>.md` | `skl-008-analyse` |
 | README de présentation | `README.md` (racine du dépôt de la présentation concernée) | `skl-005-readme-presentation` |
 | pdf de présentation | `dist/<SLUG>.pdf` (racine du dépôt de la présentation concernée ; généré par le CLI encadré par ce skill) | `skl-007-script-pdf-presentation` |
 
@@ -34,7 +35,7 @@ Cas particulier : le **rapport de recherche** demandé pour une présentation es
 
 ## Nomenclature
 
-Les livrables de type « artefact-de-travail » (plans, fondations, ADR) suivent :
+Les livrables de type « artefact-de-travail » (plans, fondations, ADR, analyses) suivent :
 
 ```
 .dev/<type>/<TYPE_PREFIX>-<SEQ>-<SLUG>.md

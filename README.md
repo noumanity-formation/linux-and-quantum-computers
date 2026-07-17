@@ -6,9 +6,9 @@ Présentation préparée pour les [Rencontres Linux du Québec](https://www.renc
 
 ⚛️ Que nous réserve le futur? Est-ce que le quantique rendra Linux obsolète? 🤔 Ou l'ordinateur quantique est-il simplement une fiction qui ne remplacera jamais la puissance industrielle de Linux? 🤔
 
-Et quel sera les rôles que devront assumer les sysadmin dans l'ère quantique qui approche? 🤔
+Ces questions nous projettent dans le futur de la technologie industrielle Linux, mais elle est sont mal posées. Les machines quantiques d'aujourd'hui, de l'IBM Quantum System One de Bromont aux réseaux quantum-safe du banc d'essai Kirq (Québec, Montréal, Sherbrooke), ne remplacent pas l'ordinateur classique : elles s'y branchent, et cette couche de contrôle tourne massivement sous Linux.
 
-Dans cette présentation-conférence, nous apportons des éléments de réponse à ces questions importantes. 🦄
+Loin de disparaître, le rôle du sysadmin se transforme et s'élargit à l'ère quantique. Ancrée dans l'écosystème quantique québécois, cette conférence explore ce que Linux et ses artisans deviennent quand le quantique entre en scène.
 
 ## Auteurs
 
@@ -16,11 +16,11 @@ Dans cette présentation-conférence, nous apportons des éléments de réponse 
 
 <img src="https://media.licdn.com/dms/image/v2/D5635AQHrCLrrVAq95A/profile-framedphoto-shrink_400_400/B56Z89prctGcAU-/0/1783445764274?e=1784066400&v=beta&t=tmKzdStI58TKDNH2cPp6j9o4u6rApE3MIgb2dfV1Xv8" alt="Jérémy Viau-Trudel" width="200" />
 
-Ayant une trajectoire atypique, Jérémy Viau-Trudel a participé à la recherche fondamentale de l'interaction laser-molécules en champ intense et ultra-bref jusqu'en 2016. À l'Université Laval, puis à l'Université Paris-Sud, il a mené des recherches sur les algorithmes numériques de résolution de l'équation de Schrodinger dépendant du temps à partir des méthodologies de la chimie computationelle, ainsi que l'étude phénoménologique des mécanismes des dynamiques nucléaires et multi-électronique typique de ce régime d'interaction laser-molécules.
+Ayant une trajectoire atypique, Jérémy Viau-Trudel a participé à la recherche fondamentale de l'interaction laser-molécules en champ intense et ultra-bref jusqu'en 2016. À l'Université Laval, puis à l'Université Paris-Sud, il a mené des recherches sur les algorithmes numériques de résolution de l'équation de Schrödinger dépendant du temps à partir des méthodologies de la chimie computationnelle, ainsi que l'étude phénoménologique des mécanismes des dynamiques nucléaires et multi-électronique typique de ce régime d'interaction laser-molécules.
 
-Depuis septembre 2016, Jérémy est consultant TI spécialisé en Linux, infrastructure () et intervient régulièrement sur des mandats DevSecOps. Son approche pragmatique l'a amené à travailler aussi bien sur des infrastructures on-premise qu'en infonuagique et en edge computing.
+Depuis septembre 2016, Jérémy est consultant TI **spécialiste Linux**, infrastructure (On-Prem, fournisseurs Cloud, Edge), DevOps, automatisation, IA, cybersécurité, pratiques modernes. Jérémy intervient régulièrement sur des mandats DevSecOps.
 
-Le travail présenté ce soir est le fruit de 26 ans et 10 mois de **recherche-action** en *Théorie des oganisations et dynamique de l'action collective*.
+Le travail présenté ce soir s'inscrit dans ses travaux sur ***le risque quantique et la Triade de menace de Davos 2026: Cyber - IA - Quantique***.
 
 
 ### [André Gerges](https://www.linkedin.com/in/andregerges/) - Conseiller en recherche en cybersécurité et conformité
@@ -30,7 +30,6 @@ Le travail présenté ce soir est le fruit de 26 ans et 10 mois de **recherche-a
 ## Financé par noumanity
 
 <img src="https://raw.githubusercontent.com/noumanity/imagen/refs/heads/main/assets/logo/logo%20noumanity-color2.png" width="200" />
-
 > 👉 Zéro bullshit. Que de la preuve. 💪🧠❤️
 
 Groupe Innovation Numanity inc. ou, plus simplement, **noumanity** est un Studio DeepTech, le premier dans la ville de Québec et probablement le seul indépendant et auto-financé au Canada.
@@ -43,6 +42,6 @@ Le portefeuille de projets de **noumanity** contient actuellement:
 
 - [Horizon IA](https://www.linkedin.com/company/studio-horizon-ia/) hébergé à [La Console](https://www.laconsole.org/): Une communauté de pratique en Intelligence Artificielle rassemblée pour propulser la prospérité technologique à Québec.
 - **Initiative Davos SecOps**: Think Tank portant sur la Triade de risques **Cyber - IA - Quantique**
-- **Plateforme Souveraine et Ouvert en Santé Numérique**: Consortium de développement technologique en soutien aux artisans des réseaux de la santé mondiale et aux patients. Regroupement de chercheurs en santé et entreprises en innovations technologique. Déployé au Québec et au Cameroun.
+- **Plateforme Souveraine et Ouverte en Santé Numérique**: Consortium de développement technologique en soutien aux artisans des réseaux de la santé mondiale et aux patients. Regroupement de chercheurs en santé et entreprises en innovations technologique. Déployé au Québec et au Cameroun.
 - **ReLaQx**: Communauté de pratiques ouverte des professionnels Linux de la Capitale-Nationale
 - **DeepTech Québec**: Communauté de pratiques ouverte en DeepTech. Focus sur l'énergie, les technologies vertes et SolarPunk.
