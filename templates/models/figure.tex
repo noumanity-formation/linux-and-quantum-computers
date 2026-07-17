@@ -1,0 +1,20 @@
+% Modele : figure - titre + image/diagramme centre, ajuste a la page, legende optionnelle
+% Champs optionnels : title_tex, image_path, caption_tex, section_tex, background_block, slide_label, section_label
+% L'image est bornee en largeur ET en hauteur (keepaspectratio) pour garantir
+% qu'elle ne deborde jamais de la page, quelle que soit sa taille source.
+\begin{frame}[t]
+<%- background_block %>
+\vspace{0.6cm}
+{\fontsize{19}{19}\selectfont\color{NoumanityBlack}\raggedright <% if slide_label and slide_label ~= "" then %><%- slide_label %>\hspace{0.5em}<% end %><%- title_tex %>\par}
+\vspace{0.3em}
+\begin{center}
+<% if image_path and image_path ~= "" then %>\includegraphics[width=0.92\paperwidth,height=0.60\paperheight,keepaspectratio]{<%- image_path %>}<% else %>{\color{NoumanityBlack!40}\itshape [image manquante : renseigner le champ image]}<% end %><% if caption_tex and caption_tex ~= "" then %>\par\vspace{0.4em}{\small\color{NoumanityBlack!70}\itshape <%- caption_tex %>}<% end %>
+\end{center}
+<% if section_tex and section_tex ~= "" then %>
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=south east, inner sep=0pt, xshift=-1.4cm, yshift=0.35cm]
+    at (current page.south east) {%
+      {\footnotesize\color{NoumanityBlack!50} <% if section_label and section_label ~= "" then %><%- section_label %>\hspace{0.5em}<% end %><%- section_tex %>}};
+\end{tikzpicture}
+<% end %>
+\end{frame}

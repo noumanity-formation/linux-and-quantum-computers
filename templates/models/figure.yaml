@@ -1,0 +1,39 @@
+name: figure
+description: "Diapositive image/diagramme : titre optionnel + une image centrée ajustée à la page, avec légende optionnelle"
+fields:
+  content:
+    required: []
+    optional:
+      - name: title
+        description: "Titre de la diapositive (optionnel)"
+        type: string
+      - name: image
+        description: "Chemin vers l'image ou le diagramme (PNG, JPEG, PDF, SVG). Bornée en largeur et hauteur (keepaspectratio) pour ne jamais déborder"
+        type: path
+      - name: caption
+        description: "Légende affichée sous l'image (optionnelle)"
+        type: string
+      - name: section
+        description: "Titre de section affiché en bas à droite (pied de page)"
+        type: string
+      - name: background
+        description: "Chemin vers l'image de fond (SVG, PNG, JPEG)"
+        type: path
+  params:
+    optional: []
+notes: >
+  L'image est incluse avec width=0.92\paperwidth et height=0.60\paperheight sous
+  keepaspectratio : elle occupe au plus la zone disponible sous le titre sans
+  jamais déborder. graphicx accepte PNG, JPEG et PDF ; un diagramme vectoriel
+  (PDF, généré par exemple par un TikZ standalone via lualatex) donne le meilleur
+  rendu. Pour un fond, préférer le champ background au champ image.
+example: |
+  ---
+  diapo:
+    model: figure
+  content:
+    title: "Architecture simplifiée d'un ordinateur"
+    image: "@src/assets/schema-ordinateur.pdf"
+    caption: "Calcul, mémoire de travail et stockage"
+    section: "Fondamentaux"
+  ---

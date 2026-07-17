@@ -725,6 +725,20 @@ local function build_ctx(meta, body, config, root, workdir_assets)
     ctx["qr_image_path"] = resolve_asset(clean_path_str(qr_image_raw), root, workdir_assets) or ""
   end
 
+  -- Image generique (modele figure : image ou diagramme centre, ajuste a la page)
+  ctx["image_path"] = ""
+  local image_raw = ctx["image"]
+  if type(image_raw) == "string" and image_raw ~= "" then
+    ctx["image_path"] = resolve_asset(clean_path_str(image_raw), root, workdir_assets) or ""
+  end
+
+  -- Logo de marque + baseline (bloc 4 de la page de titre)
+  ctx["brand_logo_path"] = ""
+  local brand_logo_raw = ctx["brand-logo"]
+  if type(brand_logo_raw) == "string" and brand_logo_raw ~= "" then
+    ctx["brand_logo_path"] = resolve_asset(clean_path_str(brand_logo_raw), root, workdir_assets) or ""
+  end
+
   -- Auteurs
   local authors = ctx["authors"] or {}
   if type(authors) == "string" then authors = { authors } end
@@ -755,6 +769,8 @@ local function build_ctx(meta, body, config, root, workdir_assets)
   ctx["equation_tex"] = tex_escape(ctx["equation"])
   ctx["message_tex"]  = inline_md(tex_escape(ctx["message"]))
   ctx["focus_tex"]    = inline_md(tex_escape(ctx["focus"]))
+  ctx["caption_tex"]  = inline_md(tex_escape(ctx["caption"]))
+  ctx["brand_tagline_tex"] = inline_md(tex_escape(ctx["brand-tagline"]))
   local qr_url_raw    = (type(ctx["qr-url"]) == "string") and ctx["qr-url"] or ""
   ctx["qr_url"]       = qr_url_raw
   local qr_label_src  = (type(ctx["qr-label"]) == "string") and ctx["qr-label"] or qr_url_raw

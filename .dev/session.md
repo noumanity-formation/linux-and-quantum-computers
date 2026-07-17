@@ -45,16 +45,105 @@ faire une recherche de fontation à propos de linux:
 - intégration linux avec GPU
 - intégration linux avec matériel non standard: capteurs, actuateurs (robotique), instruments de recherche, autres notables
 
+## 5. [Recherche de fondation] les ordinateurs quantique et l'ordinateur IBM de Bromont
 
-## x. Plan et premier jet des diapos
+Lire le fichier @.dev/source-material/poe.com/ordinateur-quantique.md
+
+Étendre la recherche et produire 2 Recherche de fondation:
+- les typologie d'ordinateur quantique
+- l'ordinateur quantique de IBM à Bromont (description détaillé)
+
+Dans ces 2 cas, évaluer en détail où et comment intervient Linux
+
+
+## 6. [Recherche de Fondation] Utilisation de l'ordinateur quantique de IBM
+
+Expliquer comment on peut utiliser l'ordinateur quantique de IBM?
+Comment on fait un programme, comment celui-ci fonctionne et comment on le lance.
+
+Décrire en détails comment et où intervient linux.
+
+
+## 7. Plan et premier jet 
 
 Plan de la présentation
 
+- page titre
+- plan de la présentation
+- partenaires dans projets quantiques
+- Qu'est-ce qu'un ordinateur et à quoi sert Linux
+  - schéma simplifier: compute + mémoire de travail + stockage information
+- Qu'est-ce qu'un ordinateur quantique
+  - bit => qbit et autres systèmes de représentation des données
+  - typologie d'un ordinateur quantique
+  - IBM Quantum System One de Bromont
+  - Accès au calcul via PINQ2
+- Ambition de noumanity
+  - Plateforme Souveraine et Ouverte de Calcul Quantique
+- Remerciements
 
-## diapo 1: page titre
+## 8 [améliorations] 
 
-titre: 
+En général => s'assurer que le contenu ne dépasse pas la page
+
+Créer un autre type de diapo pour mettre des images et des diagrammes
+
+### diapo 1: page titre
+
+titre: La place de Linux dans les ordinateurs quantique
+code QR: https://github.com/noumanity-formation/linux-and-quantum-computers
+(générer code qr dans fichier à part)
+contexte: 
+  - Rencontre Linux au Québec
+  - 17 juillet
+  - 
+
+  - bloc 1: titre
+  - bloc 2: auteurs: Jérémy Viau-Trudel - Stratégie & Leadership des pratiques de sécurité | DevSecOps | Social Hacker + photo & code qr
+  - bloc 3: contexte
+  - bloc 4: logo de noumanity + "Studio DeepTech" (en dessous)
 
 
-  - block 1: titre
-  - block2: 
+### diapo 1.1 
+
+  - André Gerges => Conseiller en recherche en cybersécurité et conformité
+  - NationTech => DataCenter miniaturisé et décentralisé
+  - QGuard => startup USA, Surveillance dynamique de configurations cryptographique et flux de données cryptés
+  - Amera Iot => startup USA chips pour crypto avancée
+  - American Binary => startup USA, VPN encryption avancée
+  - Jean Auger, Mathématicien, recherche privée en Intelligence Quantique
+
+### diapo 2.1 
+
+Ajouter des images et des schemas. Moins de texte
+
+## 9. améliorations
+
+### 2.2 
+
+Ajouter des images et des schemas. Moins de texte
+
+### 2.3 
+
+mettre un schema
+
+### 2.4 
+
+mettre un schema
+
+### 3.1
+
+- Ambition de noumanity
+  - Plateforme Souveraine et Ouverte de Calcul Quantique
+
+3 composants: Datacenter de NationTech + librairie exposant une banque d'algos implémentés en quantique + connexion sécure (VPN American binary) entre 
+
+Souveraine => accélérer l'accès au calcul quantique aux entreprises québécoise
+
+ouvert => participatif + output 100% libre et open source
+
+mettre un schema     DataCenter NationTech <-> Pinq2 <-> IBM Bromont
+
+### remerciement
+
+enlever l'url sous le code QR. Mettre juste Matériel et sources
