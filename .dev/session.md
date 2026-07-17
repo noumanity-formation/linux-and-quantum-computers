@@ -147,3 +147,17 @@ mettre un schema     DataCenter NationTech <-> Pinq2 <-> IBM Bromont
 ### remerciement
 
 enlever l'url sous le code QR. Mettre juste Matériel et sources
+
+## 10. améliorations
+
+### logo
+
+Utiliser le fichier "@src/assets/isotipo noumanity-orange-black2.jpg" dans le code QR
+
+Utiliser le fichier @src/assets/logo noumanity-color2.png pour le logo de noumanity sur la page titre
+
+Ajouter le logo de noumanity + "Studio DeepTech" sur la page de remerciement
+
+### expliquer les transmons
+
+Ajouter un schéma expliquant c'est quoi un transmon après la slide 2.2

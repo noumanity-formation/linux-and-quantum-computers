@@ -10,6 +10,12 @@ fields:
       - name: section
         description: "Titre de section affiché en bas à droite (pied de page)"
         type: string
+      - name: image
+        description: "Image ou diagramme optionnel affiché sous le contenu, borné en hauteur (0.42 paperheight) pour ne pas déborder"
+        type: path
+      - name: caption
+        description: "Légende optionnelle affichée sous l'image"
+        type: string
       - name: background
         description: "Chemin vers l'image de fond (SVG, PNG, JPEG)"
         type: path

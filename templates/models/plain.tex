@@ -6,6 +6,10 @@
 {\fontsize{19}{19}\selectfont\color{NoumanityBlack}\raggedright <% if slide_label ~= "" then %><%- slide_label %>\hspace{0.5em}<% end %><%- title_tex %>\par}
 \vspace{0.4em}
 <%- content %>
+<% if image_path and image_path ~= "" then %>
+\vspace{0.3em}
+\begin{center}\includegraphics[width=0.9\paperwidth,height=0.42\paperheight,keepaspectratio]{<%- image_path %>}<% if caption_tex and caption_tex ~= "" then %>\par\vspace{0.25em}{\small\itshape\color{NoumanityBlack!70} <%- caption_tex %>}<% end %>\end{center}
+<% end %>
 <% if section_tex and section_tex ~= "" then %>
 \begin{tikzpicture}[remember picture, overlay]
   \node[anchor=south east, inner sep=0pt, xshift=-1.4cm, yshift=0.35cm]
