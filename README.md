@@ -14,7 +14,7 @@ Loin de disparaître, le rôle du sysadmin se transforme et s'élargit à l'ère
 
 ### [Jérémy Viau-Trudel](https://www.linkedin.com/in/jvtrudel/) - Stratégie & Leadership des pratiques de sécurité | DevSecOps | Social Hacker
 
-<img src="https://media.licdn.com/dms/image/v2/D5635AQHrCLrrVAq95A/profile-framedphoto-shrink_400_400/B56Z89prctGcAU-/0/1783445764274?e=1784066400&v=beta&t=tmKzdStI58TKDNH2cPp6j9o4u6rApE3MIgb2dfV1Xv8" alt="Jérémy Viau-Trudel" width="200" />
+<img src="https://media.licdn.com/dms/image/v2/D5635AQHrCLrrVAq95A/profile-framedphoto-shrink_800_800/B56Z89prctGcAY-/0/1783445764273?e=1784930400&v=beta&t=1XDbrjvqf7jjr6hcauE6I5qiqs8FAK4N3lC4x05Voeg" alt="Jérémy Viau-Trudel" width="200" />
 
 Ayant une trajectoire atypique, Jérémy Viau-Trudel a participé à la recherche fondamentale de l'interaction laser-molécules en champ intense et ultra-bref jusqu'en 2016. À l'Université Laval, puis à l'Université Paris-Sud, il a mené des recherches sur les algorithmes numériques de résolution de l'équation de Schrödinger dépendant du temps à partir des méthodologies de la chimie computationnelle, ainsi que l'étude phénoménologique des mécanismes des dynamiques nucléaires et multi-électronique typique de ce régime d'interaction laser-molécules.
 
@@ -25,7 +25,7 @@ Le travail présenté ce soir s'inscrit dans ses travaux sur ***le risque quanti
 
 ### [André Gerges](https://www.linkedin.com/in/andregerges/) - Conseiller en recherche en cybersécurité et conformité
 
-<img src="https://media.licdn.com/dms/image/v2/C4E03AQGEBpr9Glj_Og/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1649771013051?e=1782950400&v=beta&t=bH1KEmQkeWZMa5ImsxQDxU5mSngjzwi_gAlhUrvHqwE" width="200"/>
+<img src="https://media.licdn.com/dms/image/v2/C4E03AQGEBpr9Glj_Og/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1649771013051?e=1785974400&v=beta&t=gv2vB5xqNEwnqWcq1-o2QkkqzadOQoHycXwoGsSHoVs" width="200"/>
 
 ## Financé par noumanity
 
